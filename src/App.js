@@ -2,7 +2,6 @@ import './App.css';
 import Header from './components/Header';
 import { Route, Switch } from "react-router-dom";
 import Home from './components/Home';
-import Uploadproduct from './components/adminpannel/Uploadproduct';
 import Men from './components/Men';
 import Women from './components/Women';
 import Kid from './components/Kid';
