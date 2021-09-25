@@ -2,7 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import { Route, Switch } from "react-router-dom";
 import Home from './components/Home';
-import Upload_product from './components/adminpannel/Upload_product';
+import Uploadproduct from './components/adminpannel/Uploadproduct';
 import Men from './components/Men';
 import Women from './components/Women';
 import Kid from './components/Kid';
@@ -12,7 +12,7 @@ function App() {
     <>
       <Header />
 
-      <Upload_product />
+      <Uploadproduct />
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
 
 
