@@ -54,9 +54,10 @@ const Cards = ({ val }) => {
 
                             <h3>{val.p_name}</h3>
                             <p>{val.p_dis}</p>
+                            <button onClick={call_add_to_cart} style={{ borderRadius: '14px' }}>Add to Cart</button>
                         </div>
                     </div>
-                    <button onClick={call_add_to_cart}>Add to Cart</button>
+
 
                 </Modal.Body>
             </Modal>
@@ -71,7 +72,7 @@ const Cards = ({ val }) => {
 
                     <h3>{val.p_name}</h3>
                     {/* <h5>${val.p_price}{val.p_sale==="yes"?} </h5> */}
-                    {val.p_sale === "yes" ? <h5><span style={{ textDecoration: 'line-through' }}>${val.p_price}</span> <span style={{ color: 'red' }}>${val.p_disc}</span></h5> : <h5>{val.p_price}</h5>}
+                    {val.p_sale === "yes" ? <h5><span style={{ textDecoration: 'line-through' }}>${val.p_price}</span> <span style={{ color: 'red' }}>${val.p_disc}</span></h5> : <h5>${val.p_price}</h5>}
                 </div>
             </div>
         </>

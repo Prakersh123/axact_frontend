@@ -2,7 +2,19 @@
     margin: 3%;
     width: 40%;
 }
-
+.cart_grid_container {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2%;
+    margin-bottom: 2%;
+}
+.cart_img_added {
+    width: 100%;
+}
+.cart_details {
+    padding: 2%;
+}
 
 .signup_form {
     display: flex;

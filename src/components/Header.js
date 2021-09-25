@@ -149,7 +149,7 @@ const Header = () => {
               <input type="password" value={valReg.password} onChange={formdatahandle2} name="password" required />
             </label>
             <br />
-           <center> <button type="submit" >Sign up</button></center>
+            <center> <button type="submit" >Sign up</button></center>
 
           </form>
           {/* <span style={{cursor:'pointer'}} onClick={toggleModal}><u>Don't have an account? Sign up</u></span> */}
@@ -201,7 +201,7 @@ const Header = () => {
 
 
       <Modal
-        size="md"
+        size="sm"
         show={mdshow}
         onHide={() => setmdShow(false)}
         aria-labelledby="example-modal-sizes-title-sm"
@@ -215,8 +215,15 @@ const Header = () => {
           {
             cartitem.map((ele, index) => {
               return (
-                <div key={index}>
-                  <img alt="sry" src={ele.p_img} />
+                <div className="cart_grid_container" key={index}>
+                  <div>
+                    <img className="cart_img_added" alt="sry" src={ele.p_img} />
+                  </div>
+                  <div className="cart_details">
+                    <h3>{ele.p_name}</h3>
+                    {ele.p_sale === "yes" ? <h5><span style={{ textDecoration: 'line-through' }}>${ele.p_price}</span> <span style={{ color: 'red' }}>${ele.p_disc}</span></h5> : <h5> <span>$</span> {ele.p_price}</h5>}
+
+                  </div>
                 </div>
               )
             })
