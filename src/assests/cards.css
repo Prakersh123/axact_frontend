@@ -1,0 +1,22 @@
+.card_container {
+    width: 90%;
+    /* height: 400px; */
+    /* background-color: red; */
+    padding: 2%;
+}
+
+.card_container img {
+    border-radius: 14px;
+    width: 100%;
+    /* height: 400px; */
+    background-color: red;
+
+    transition: transform 0.2s ease-in-out;
+}
+.card_container img:hover {
+    /* background-color: black; */
+    cursor: pointer;
+    opacity: 0.6;
+    transform: translate(0.2%, -5px);
+    border: 2px solid rgb(238, 238, 238);
+}
