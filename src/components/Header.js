@@ -252,18 +252,10 @@ const Header = () => {
 
       <Navbar bg="light" expand="lg">
         <Container>
-          {/* <Navbar.Brand to="/">Shopping Cart</Navbar.Brand> */}
-          <span ClassName="heade"><Link to="/" >Shopping Cart</Link></span>
+          <span ClassName="brand_head"><Link to="/" >Shopping Cart</Link></span>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              {/* <Nav.Link href="/">Home</Nav.Link> */}
-              {/* <Nav.Link href="men">Mens</Nav.Link> */}
-              {/* <Nav.Link href="women">Women</Nav.Link> */}
-              {/* <Nav.Link href="kid">Kids</Nav.Link> */}
-
-
-              {/* <Nav.Link href="men">Mens</Nav.Link> */}
               <Link to="/">Home</Link>
 
               <Link to="/men">Men</Link>
@@ -272,11 +264,10 @@ const Header = () => {
 
               <Link to="/kid">Kids</Link>
 
-              {/* <Nav.Link href="#link" style={{ float: 'right' }}>Login</Nav.Link> */}
-              {(log === false && admlog === false) ? <span onClick={() => setSmShow(true)}>Login</span> : <span onClick={logmeout} >Logout</span>
+              {(log === false && admlog === false) ? <span style={{ color: 'red', fontWeight: '700', cursor: 'pointer' }} onClick={() => setSmShow(true)}>Login</span> : <span onClick={logmeout} style={{ color: 'red', fontWeight: '700', cursor: 'pointer' }} >Logout</span>
               }
 
-              {log === true && admlog === false ? <span onClick={cartView}>Cart</span> : null}
+              {log === true && admlog === false ? <span onClick={cartView} style={{ color: 'red', fontWeight: '700', cursor: 'pointer' }}>ViewCart</span> : null}
             </Nav>
           </Navbar.Collapse>
         </Container>
