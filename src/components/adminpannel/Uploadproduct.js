@@ -73,7 +73,7 @@ function Example() {
           formd.p_img = va;
           console.log("hey", formd)
 
-          apiCall('POST', "http://localhost:8000/admin/arya", formd)
+          apiCall('POST', "https://axact-backend.herokuapp.com/admin/arya", formd)
           setLgShow(false);
 
 

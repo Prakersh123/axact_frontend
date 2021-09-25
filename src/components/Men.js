@@ -20,7 +20,7 @@ const Men = () => {
 
         const call_me = async () => {
 
-            const result = await apiCall('GET', "http://localhost:8000/admin/getall");
+            const result = await apiCall('GET', "https://axact-backend.herokuapp.com/admin/getall");
             setMen(result.men);
         }
 

@@ -11,7 +11,7 @@ const Cards = ({ val }) => {
     const [smSho, setSmSho] = useState(false);
     const call_add_to_cart = async () => {
         var tok = await localStorage.getItem("jwt")
-        const res = await fetch('http://localhost:8000/admin/addtocart',
+        const res = await fetch('https://axact-backend.herokuapp.com/admin/addtocart',
             {
                 method: "POST",
                 headers: {

@@ -31,7 +31,7 @@ const Header = () => {
 
 
     var tok = await localStorage.getItem("jwt")
-    const res = await fetch('http://localhost:8000/admin/itemofcart',
+    const res = await fetch('https://axact-backend.herokuapp.com/admin/itemofcart',
       {
         method: "POST",
         headers: {
@@ -78,8 +78,8 @@ const Header = () => {
   const submitone = async (e) => {
     e.preventDefault();
     console.log(val, "arya mahadev");
-    //  const res = apiCall('POST',"http://localhost:8000/admin/login",val);
-    const res = await fetch('http://localhost:8000/admin/login',
+    //  const res = apiCall('POST',"https://axact-backend.herokuapp.com/admin/login",val);
+    const res = await fetch('https://axact-backend.herokuapp.com/admin/login',
       {
         method: "POST",
         headers: {
@@ -113,7 +113,7 @@ const Header = () => {
   const submitwo = (e) => {
     e.preventDefault();
     console.log(valReg, "arya2 mahadev");
-    const res = apiCall('POST', "http://localhost:8000/admin/registration", valReg);
+    const res = apiCall('POST', "https://axact-backend.herokuapp.com/admin/registration", valReg);
 
     setValreg({})
     console.log(res)
