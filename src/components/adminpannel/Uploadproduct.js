@@ -73,7 +73,7 @@ function Example() {
           formd.p_img = va;
           console.log("hey", formd)
 
-          apiCall('POST', "https://axact-backend.herokuapp.com/admin/arya", formd)
+          apiCall('POST', "http://localhost:8000/admin/arya", formd)
           setLgShow(false);
 
 
@@ -95,7 +95,7 @@ function Example() {
   return (
     <>
       {/* <Button onClick={() => setSmShow(true)}>Small modal</Button>{' '} */}
-      <Button onClick={() => setLgShow(true)}>Modal</Button>{' '}
+      <Button onClick={() => setLgShow(true)}>Add a new Product</Button>{' '}
 
 
       <Modal

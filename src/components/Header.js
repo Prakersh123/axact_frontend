@@ -4,11 +4,14 @@ import { Navbar, Container, Nav, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import { apiCall } from '../Api';
 import "../assests/Header.css"
+import Uploadproduct from './adminpannel/Uploadproduct';
 
 
 const Header = () => {
   const [cartitem, setcartitem] = useState([])
   const [log, setLog] = useState(false);
+  const [admlog, setadmlog] = useState(false);
+
   const [val, setVal] = useState({
     type: 'user',
     email: '',
@@ -28,7 +31,7 @@ const Header = () => {
 
 
     var tok = await localStorage.getItem("jwt")
-    const res = await fetch('https://axact-backend.herokuapp.com/admin/itemofcart',
+    const res = await fetch('http://localhost:8000/admin/itemofcart',
       {
         method: "POST",
         headers: {
@@ -75,8 +78,8 @@ const Header = () => {
   const submitone = async (e) => {
     e.preventDefault();
     console.log(val, "arya mahadev");
-    //  const res = apiCall('POST',"https://axact-backend.herokuapp.com/admin/login",val);
-    const res = await fetch('https://axact-backend.herokuapp.com/admin/login',
+    //  const res = apiCall('POST',"http://localhost:8000/admin/login",val);
+    const res = await fetch('http://localhost:8000/admin/login',
       {
         method: "POST",
         headers: {
@@ -97,18 +100,22 @@ const Header = () => {
       setSmShow(false)
       localStorage.setItem("jwt", data.message)
       console.log(localStorage.getItem("jwt"))
-      setLog(true);
+      if (data.type === "user")
+        setLog(true);
+      else if (data.type === "admin")
+        setadmlog(true);
       console.log(data, "got this")
 
     }
-
+    setVal({})
 
   }
   const submitwo = (e) => {
     e.preventDefault();
     console.log(valReg, "arya2 mahadev");
-    const res = apiCall('POST', "https://axact-backend.herokuapp.com/admin/registration", valReg);
+    const res = apiCall('POST', "http://localhost:8000/admin/registration", valReg);
 
+    setValreg({})
     console.log(res)
 
   }
@@ -116,8 +123,13 @@ const Header = () => {
 
 
   const logmeout = (e) => {
-    setLog(false);
+    if (admlog === true)
+      setadmlog(false);
+    else
+      setLog(false);
     localStorage.setItem("jwt", "");
+    setValreg({})
+    setVal({})
   }
   return (
     <>
@@ -261,17 +273,21 @@ const Header = () => {
               <Link to="/kid">Kids</Link>
 
               {/* <Nav.Link href="#link" style={{ float: 'right' }}>Login</Nav.Link> */}
-              {log === false ? <span onClick={() => setSmShow(true)}>Login</span> : <span onClick={logmeout} >Logout</span>
+              {(log === false && admlog === false) ? <span onClick={() => setSmShow(true)}>Login</span> : <span onClick={logmeout} >Logout</span>
               }
 
-              {log === true ? <span onClick={cartView}>Cart</span> : null}
+              {log === true && admlog === false ? <span onClick={cartView}>Cart</span> : null}
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
       <div>
-        <center><input className="search_field" type="text" placeholder="Search your items" /> </center>
+        {admlog === true ? <center><h1>Welcom Admin </h1> </center> : null}
+        {log === true ? <center><h1>Welcom User</h1> </center> : null}
 
+        {
+          admlog === true ?
+            <center><Uploadproduct /> </center> : null}
       </div>
 
     </>

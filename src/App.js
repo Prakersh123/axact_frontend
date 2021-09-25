@@ -12,7 +12,6 @@ function App() {
     <>
       <Header />
 
-      <Uploadproduct />
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
 
 
