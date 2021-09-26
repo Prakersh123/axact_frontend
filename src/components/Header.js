@@ -174,7 +174,7 @@ const Header = () => {
 
 
       <Modal
-        size="md"
+        size="sm"
         show={smShow}
         onHide={() => setSmShow(false)}
         aria-labelledby="example-modal-sizes-title-sm"
@@ -202,8 +202,8 @@ const Header = () => {
               <input type="password" value={val.password} name="password" onChange={formdatahandle} required />
             </label>
             <br />
-            <button type="submit" >Login</button>
-
+            <center> <button style={{ borderRadius: '14px', margin: '2%' }} type="submit" >Login</button>
+            </center>
           </form>
           <span style={{ cursor: 'pointer' }} onClick={toggleModal}><u>Don't have an account? Sign up</u></span>
 
