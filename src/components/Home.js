@@ -59,7 +59,7 @@ const Home = () => {
 
             <div className="grid_container_home">
                 <div className="grid_item1">
-                    <Link to="/women"><img src={womeni} alt="sry" /></Link>
+                    <center><Link to="/women"><img src={womeni} className='cat_img' alt="sry" /></Link></center>
                 </div>
                 <div className="grid_item2">
                     {/* <Appp itemm={men} /> */}
@@ -92,7 +92,7 @@ const Home = () => {
                 </div>
 
                 <div className="grid_item1">
-                    <Link to="/men"><img alt="sry" src={meni} /></Link>
+                    <center><Link to="/men"><img alt="sry" className="cat_img" src={meni} /></Link></center>
 
                 </div>
             </div>
@@ -105,7 +105,7 @@ const Home = () => {
 
             <div className="grid_container_home">
                 <div className="grid_item1">
-                    <Link to="/kid"><img src={kids} alt="sry" style={{ maxHeight: '620px' }} /></Link>
+                    <center>  <Link to="/kid"><img src={kids} alt="sry" className="cat_img" style={{ maxHeight: '620px' }} /></Link></center>
                 </div>
                 <div className="grid_item2">
                     {/* <Appp itemm={men} /> */}
