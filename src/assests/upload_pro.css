@@ -5,3 +5,27 @@
     align-items: center;
     text-align: left;
 }
+.upload_form label {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 2%;
+
+}
+input {
+    box-sizing: border-box;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 14px;
+    box-shadow: 2px 2px 2px rgb(73, 72, 72);
+    padding: 1%;
+    background-color: rgba(245, 231, 213, 0.26);
+
+}
+input:focus {
+    outline: none;
+}
+.upload_form button {
+    border-radius: 14px;
+}

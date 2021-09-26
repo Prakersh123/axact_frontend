@@ -99,7 +99,7 @@ function Example() {
 
 
       <Modal
-        size="lg"
+        size="md"
         show={lgShow}
         onHide={() => setLgShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
@@ -114,24 +114,25 @@ function Example() {
           <form className="upload_form" onSubmit={submitHandler}>
 
             <label>
-              Category:
-            <input type="radio" value="mens" name="p_category" onChange={formHandler} /> Mens
+              <span>Category:</span>
+              <span>
+                <input required type="radio" value="mens" name="p_category" onChange={formHandler} /> Mens
 
-            <input type="radio" value="womens" name="p_category" onChange={formHandler} /> Womens
+            <input required type="radio" value="womens" name="p_category" onChange={formHandler} /> Womens
 
-            <input type="radio" value="kids" name="p_category" onChange={formHandler} /> Kids
-
-</label>
+            <input required type="radio" value="kids" name="p_category" onChange={formHandler} /> Kids
+            </span>
+            </label>
             <label>
               Product Name:
-                    <input type="text" placeholder="enter product name" onChange={formHandler}
+                    <input required type="text" placeholder="enter product name" onChange={formHandler}
                 value={formData.p_name}
                 name="p_name"
               />
             </label>
             <label>
               Product Price:
-                    <input type="number" placeholder="enter product name" value={formData.p_price} onChange={formHandler}
+                    <input required type="number" placeholder="enter product name" value={formData.p_price} onChange={formHandler}
 
                 name="p_price"
               />
@@ -147,16 +148,17 @@ function Example() {
             </label>
             <label>
               Upload Image:
-                    <input type="file" name="p_img" onChange={imgUpload} />
+                    <input required type="file" name="p_img" onChange={imgUpload} accept=".jpg,.jpeg,.svg,.png" />
             </label>
 
             <label>
-              OnSale :
-                    <input type="radio" value="yes" name="p_sale" onChange={formHandler} /> Yes
+              <span>OnSale :</span>
+              <span>
+                <input type="radio" value="yes" name="p_sale" onChange={formHandler} /> Yes
                     <input type="radio" value="no" name="p_sale" onChange={formHandler} /> No
+                    </span>
 
-
-                </label>
+            </label>
 
             {
               // console.log(formData.p_sale)
